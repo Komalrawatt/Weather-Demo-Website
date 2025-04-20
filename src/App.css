@@ -1,0 +1,78 @@
+.spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side,#6f8faf 94%,#0000) top/9px 9px no-repeat,
+           conic-gradient(#0000 30%,#6f8faf);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+ }
+ 
+ @keyframes spinner-c7wet2 {
+    100% {
+       transform: rotate(1turn);
+    }
+ }
+
+ .robot{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 70px;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+      padding: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      word-spacing: 4px;
+      color: #142231;
+  }
+
+
+  
+.fav {
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  .jap {
+    font-family: "Reggae One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    padding: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    color: #142231;
+    font-size: 70px;
+
+  }
+  
+.kom {
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+
+      "wdth" 100;
+      margin-bottom: 20px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    color: #142231;
+    font-size: 80px;
+  }
+
+
+  .kom {
+    font-family: "Rubik Wet Paint", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    /* color:rgb(35, 65, 116) */
+  color:#000
+  }
+  
