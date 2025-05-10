@@ -52,27 +52,20 @@
 
   }
   
-.kom {
-    font-family: "Saira", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-variation-settings:
-
-      "wdth" 100;
-      margin-bottom: 20px;
-    letter-spacing: 2px;
-    word-spacing: 4px;
-    color: #142231;
-    font-size: 80px;
-  }
+.saira {
+  font-family: "Saira", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 
 
-  .kom {
-    font-family: "Rubik Wet Paint", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    /* color:rgb(35, 65, 116) */
-  color:#000
-  }
+ 
   
+  .kom{
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

@@ -55,10 +55,10 @@ function App() {
       {/* <Rain numDrops="30" className='animation-duration: 2.5s h-full w-full' /> */}
 
       {/* <TbBrandReact  className="text-blue-600 text-[80px] scale-100 mt-2 transition duration-300 hover:text-[#0F52BA] hover:scale-140 hover:drop-shadow-lg " /> */}
-      <h1 className="kom  sm:text-[40px]  lg:text-[200px] 
+      <h1 className=" kom xs:text-[100px]  lg:text-[150px] 
                font-bold text-center transition-transform duration-200 
-               hover:scale-105 text-blue-300 cursor-pointer mt-5">
-        Komal's Weather
+               hover:scale-105  hover:text-slate-800 cursor-pointer mt-5">
+         ClimaCast
       </h1>
       <div className='lg-h-min/h/screen xs-h-[400px] xs-w-[500px] lg-w-[500px] shadow-lg shadow-black/100 p-6 rounded-2xl backdrop-blur '>
         {/* <Rain numDrops="30" className='animation-duration: 2.5s h-full w-full' /> */}
@@ -73,7 +73,7 @@ function App() {
 
             {/* Temperature & Location */}
             <div className="flex flex-col items-center mt-4 text-center">
-              <p className="fav text-4xl sm:text-6xl md:text-8xl mb-2 font-bold text-amber-50">
+              <p className="saira text-4xl sm:text-6xl md:text-8xl mb-2 font-bold text-amber-50">
                 {data.main.temp}K
               </p>
               <h2 className="font-bold fav text-2xl sm:text-3xl md:text-4xl mb-2">
