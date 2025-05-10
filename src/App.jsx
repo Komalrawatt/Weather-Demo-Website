@@ -55,19 +55,19 @@ function App() {
       {/* <Rain numDrops="30" className='animation-duration: 2.5s h-full w-full' /> */}
 
       {/* <TbBrandReact  className="text-blue-600 text-[80px] scale-100 mt-2 transition duration-300 hover:text-[#0F52BA] hover:scale-140 hover:drop-shadow-lg " /> */}
-      <h1 className="kom xs-text-[30px] sm:text-[40px] md:text-[80px] lg:text-[100px] 
+      <h1 className="kom  sm:text-[40px]  lg:text-[200px] 
                font-bold text-center transition-transform duration-200 
-               lg-hover:scale-105 hover:text-blue-950 cursor-pointer">
+               hover:scale-105 text-blue-300 cursor-pointer mt-5">
         Komal's Weather
       </h1>
-      <div className='h-min/h/screen w-[400px] shadow-lg shadow-black/100 p-6 rounded-2xl backdrop-blur '>
+      <div className='lg-h-min/h/screen xs-h-[400px] xs-w-[500px] lg-w-[500px] shadow-lg shadow-black/100 p-6 rounded-2xl backdrop-blur '>
         {/* <Rain numDrops="30" className='animation-duration: 2.5s h-full w-full' /> */}
 
         {data ? (
 
           <div className="px-4 py-6">
             {/* Weather Icon */}
-            <div className="flex justify-center text-[100px] sm:text-[150px] md:text-[200px] transition duration-300 hover:scale-105 hover:text-slate-800 hover:drop-shadow">
+            <div className="flex justify-center text-[100px] sm:text-[150px] md:text-[200px] transition duration-300 hover:scale-125 hover:text-slate-800 hover:drop-shadow">
               <TiWeatherCloudy />
             </div>
 
@@ -88,19 +88,19 @@ function App() {
             <div className="flex flex-col sm:flex-row justify-around items-center mt-10 gap-6 sm:gap-0 fav">
               {/* Humidity */}
               <div className="flex flex-col items-center">
-                <WiHumidity className="text-4xl sm:text-5xl md:text-6xl transition duration-300 hover:scale-105 hover:text-slate-900" />
+                <WiHumidity className="text-4xl sm:text-5xl md:text-6xl transition duration-300 hover:scale-125 hover:text-slate-900" />
                 <p className="font-bold mt-1 sm:mt-2">{data.main.humidity}%</p>
               </div>
 
               {/* Wind Speed */}
               <div className="flex flex-col items-center">
-                <FaWind className="text-4xl sm:text-5xl transition duration-300 hover:scale-105 hover:text-slate-900" />
+                <FaWind className="text-4xl sm:text-5xl transition duration-300 hover:scale-125 hover:text-slate-900" />
                 <p className="font-bold mt-1 sm:mt-2">{data.wind.speed} m/s</p>
               </div>
 
               {/* Pressure */}
               <div className="flex flex-col items-center">
-                <RiCompass2Line className="text-4xl sm:text-5xl transition duration-300 hover:scale-105 hover:text-slate-900" />
+                <RiCompass2Line className="text-4xl sm:text-5xl transition duration-300 hover:scale-125 hover:text-slate-900" />
                 <p className="font-bold mt-1 sm:mt-2">{data.main.pressure} hPa</p>
               </div>
             </div>
