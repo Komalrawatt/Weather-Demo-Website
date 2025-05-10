@@ -17,87 +17,109 @@ import "react-rain-animation/lib/style.css";
 import Footer from './Footer';
 
 function App() {
-const [data, setData] = useState(null)
+  const [data, setData] = useState(null)
 
-async function weatherdata(){
-  try
-  {
-    const response=await Axios.get('https://api.openweathermap.org/data/2.5/weather?q=London&appid=fcc5ecc229f0424fd881a9e2ed96e7cf')
-    setData(response.data);
+  async function weatherdata() {
+    try {
+      const response = await Axios.get('https://api.openweathermap.org/data/2.5/weather?q=London&appid=fcc5ecc229f0424fd881a9e2ed96e7cf')
+      setData(response.data);
 
     }
 
-  catch(error)
-    {
-        console.log("Error fetching data",error)
+    catch (error) {
+      console.log("Error fetching data", error)
     }
-}
-// useEffect(()=>{
-//  weatherdata();
-// },[data]);
+  }
+  // useEffect(()=>{
+  //  weatherdata();
+  // },[data]);
 
-useEffect(()=>{
-  weatherdata();
-  console.log(data);
-  
- },[data]);
- 
+  useEffect(() => {
+    weatherdata();
+    console.log(data);
+
+  }, [data]);
+
 
   return (
 
-    <div className='flex items-center flex-col h-[800px] w-svw bg-[image:var(--image-url)] bg-cover bg-no-repeat bg-center bg-fixed'
-      style= {{'--image-url': `url(${bg})`}} 
+    <div
+      className="flex flex-col items-center h-[1000px] w-screen 
+             bg-[image:var(--image-url)] bg-cover bg-center bg-no-repeat bg-fixed"
+      style={{ '--image-url': `url(${bg})` }}
     >
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-  <Rain numDrops="30" />
-</div>
-       {/* <Rain numDrops="30" className='animation-duration: 2.5s h-full w-full' /> */}
 
-      {/* <TbBrandReact  className="text-blue-600 text-[80px] scale-100 mt-2 transition duration-300 hover:text-[#0F52BA] hover:scale-140 hover:drop-shadow-lg " /> */}
-      <h1 className='kom text-[100px]    hover:pointer-cursor  hover:scale-105 transition-transform duration-200 hover:text-blue-950'>Komal's Weather App</h1>
-      <div className='h-min/h/screen w-[400px] shadow-lg shadow-black/100 p-6 rounded-2xl backdrop-blur '> 
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        <Rain numDrops="50" />
+      </div>
       {/* <Rain numDrops="30" className='animation-duration: 2.5s h-full w-full' /> */}
 
-                  {data ? (
-                    <div >
-                          <div className='flex justify-center text-[200px] transition duration-300 hover:scale-140 hover:text-slate-800 hover:drop-shadow  '>
-                          <TiWeatherCloudy />
-                          </div>
-                          
-                          <div className='flex flex-col items-center mt-4'>
-                              <p className='fav text-8xl mb-2  font-bold text-amber-50'>{data.main.temp}K</p>
-                              <h2 className='font-bold fav text-4xl mb-2  '>{data.name}</h2>
-                              <p className='fav text-0xl mb-2 text-amber-50'>{data.weather[0].description}</p>
-                          </div>
-                          <div className='flex justify-around mt-10 fav '>
-                              <div  className='flex flex-col items-center'>
-                                   <WiHumidity className='text-6xl  transition duration-300 hover:scale-140 hover:text-slate-900' />
-                                   <p className='font-bold '> {data.main.humidity}%</p>
-                              </div>
-                              <div className='flex flex-col items-center'>
-                                  <FaWind className='text-5xl transition duration-300 hover:scale-140 hover:text-slate-900' />
-                                  <p className='font-bold mt-2'>{data.wind.speed} m/s</p>
-                              </div>
-                              <div className='flex flex-col items-center'>
-                                  <RiCompass2Line  className='text-5xl transition duration-300 hover:scale-140 hover:text-slate-900'/>
-                                 <p className='font-bold mt-2'>{data.main.pressure} hPa</p>
-                              </div>
-                          </div>
-                    </div>
-                  ) : (
-                    <div className='flex flex-col items-center justify-center h-full'>
-                      <div className='spinner'>
-                        </div>
-                        
-                      <p className='fav flex flex-col justify-center items-center p-2'>Excited...
-                      <span className='text-3xl mt-2'><FaSmileWink /></span>
-                      </p>
-                    </div>
-                  )}
-        </div>
-       <Footer />
-  </div>
-  
+      {/* <TbBrandReact  className="text-blue-600 text-[80px] scale-100 mt-2 transition duration-300 hover:text-[#0F52BA] hover:scale-140 hover:drop-shadow-lg " /> */}
+      <h1 className="kom xs-text-[30px] sm:text-[40px] md:text-[80px] lg:text-[100px] 
+               font-bold text-center transition-transform duration-200 
+               lg-hover:scale-105 hover:text-blue-950 cursor-pointer">
+        Komal's Weather
+      </h1>
+      <div className='h-min/h/screen w-[400px] shadow-lg shadow-black/100 p-6 rounded-2xl backdrop-blur '>
+        {/* <Rain numDrops="30" className='animation-duration: 2.5s h-full w-full' /> */}
+
+        {data ? (
+
+          <div className="px-4 py-6">
+            {/* Weather Icon */}
+            <div className="flex justify-center text-[100px] sm:text-[150px] md:text-[200px] transition duration-300 hover:scale-105 hover:text-slate-800 hover:drop-shadow">
+              <TiWeatherCloudy />
+            </div>
+
+            {/* Temperature & Location */}
+            <div className="flex flex-col items-center mt-4 text-center">
+              <p className="fav text-4xl sm:text-6xl md:text-8xl mb-2 font-bold text-amber-50">
+                {data.main.temp}K
+              </p>
+              <h2 className="font-bold fav text-2xl sm:text-3xl md:text-4xl mb-2">
+                {data.name}
+              </h2>
+              <p className="fav text-base sm:text-lg text-amber-50">
+                {data.weather[0].description}
+              </p>
+            </div>
+
+            {/* Humidity, Wind, Pressure */}
+            <div className="flex flex-col sm:flex-row justify-around items-center mt-10 gap-6 sm:gap-0 fav">
+              {/* Humidity */}
+              <div className="flex flex-col items-center">
+                <WiHumidity className="text-4xl sm:text-5xl md:text-6xl transition duration-300 hover:scale-105 hover:text-slate-900" />
+                <p className="font-bold mt-1 sm:mt-2">{data.main.humidity}%</p>
+              </div>
+
+              {/* Wind Speed */}
+              <div className="flex flex-col items-center">
+                <FaWind className="text-4xl sm:text-5xl transition duration-300 hover:scale-105 hover:text-slate-900" />
+                <p className="font-bold mt-1 sm:mt-2">{data.wind.speed} m/s</p>
+              </div>
+
+              {/* Pressure */}
+              <div className="flex flex-col items-center">
+                <RiCompass2Line className="text-4xl sm:text-5xl transition duration-300 hover:scale-105 hover:text-slate-900" />
+                <p className="font-bold mt-1 sm:mt-2">{data.main.pressure} hPa</p>
+              </div>
+            </div>
+          </div>
+
+        ) : (
+          <div className='flex flex-col items-center justify-center h-full'>
+            <div className='spinner'>
+            </div>
+
+            <p className='fav flex flex-col justify-center items-center p-2'>Excited...
+              <span className='text-3xl mt-2'><FaSmileWink /></span>
+            </p>
+          </div>
+        )}
+      </div>
+      <Footer />
+    </div>
+
   )
 }
 
